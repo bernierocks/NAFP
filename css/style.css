@@ -1,0 +1,150 @@
+/*----------------------------
+	Fonts, Titles, Text
+------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Marcellus|Open+Sans:400,700);
+
+/* font assignments */
+body{
+	font-family: "Open Sans", arial, sans;
+}
+.whatevs{
+	font-family: "Marcellus","Trebuchet MS",arial,sans;
+}
+/* alignment */
+.txt-c{
+	text-align: center;
+}
+.txt-l{
+	text-align: left;
+}
+.txt-r{
+	text-align: right;
+}
+
+/* H1 - H6*/
+h1, h2, h3{
+	margin: 0px;
+	padding: 0px;
+}
+h1.title{
+	font-size: 48px;
+	
+}
+/* links */
+a{
+	color: #990000;
+}
+a:hover{
+	color: #EF373B;
+}
+a.black{
+	color: #000000;
+}
+a.white{
+	color: #ffffff;
+}
+a.white:hover{
+	color: #cecece;
+}
+
+abbr{
+	border-bottom: 0px !important;
+	
+}
+/*----------------------------
+	Inputs/input groups
+-----------------------------*/
+
+/*----------------------------
+	Images
+-----------------------------*/
+img{
+	border: 0px;
+}
+
+/*----------------------------
+	Areas
+-----------------------------*/
+.head.row, .main.row, .foot.row{
+	background-color: #ffffff;
+}
+body {
+	font-size: 14px; /* sets font size for page so em's work */
+	background-color: #282828;
+}
+/* header */
+.head.row, .main.row, .foot.row{
+	padding-top:15px; 
+	padding-bottom:15px; 
+}
+/* side-bar */
+/* Index/Main Body*/
+.main.row{}
+/* Foot */
+.foot.row{}
+/* Events */
+/* */
+/* News */
+/* slider */
+/*----------------------------
+	Utility
+-----------------------------*/
+.p-0, .p-0x{
+	padding: 0px;
+}
+.pr-0{
+	padding-right: 0px;
+}
+.pl-0{
+	padding-left: 0px;
+}
+.pl-b{
+	padding-left: px;
+}
+.pr-b{
+	padding-right: px;
+}
+.m-0{
+	margin: 0px;
+}
+.bump{
+	height: 5px;
+}
+.p-b{
+	padding:;
+}
+.mb{
+	margin-bottom: 10px;
+}
+.w-100{
+	width: 100%;
+}
+.h-100{
+	height: 100%;
+}
+.o-no{
+	overflow: auto;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.cb{
+	clear:both;
+}
+/* z-indices */
+.z-150{
+	position: relative;
+	z-index: 150;
+}
+.z-100{
+	position: relative;
+	z-index: 100;
+}
+.z-50{
+	position: relative;
+	z-index: 50;
+}
+

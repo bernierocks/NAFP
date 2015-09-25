@@ -1,0 +1,47 @@
+#gcal {
+	width: auto;
+	max-width: 360px;
+	margin: 0px 10px 10px;
+	font-size: 10px;
+	background-color: #FFF;
+	padding: 0px;
+}
+.fc-header-title h2 {
+	font-size: .9em;
+	white-space: normal !important;
+	margin: 8px 20px 0px 0px;
+}
+.fc-header{
+	margin-top: 10px;
+}	
+.fc-view-month .fc-event, .fc-view-agendaWeek .fc-event {
+	font-size: 0;
+	overflow: hidden;
+	height: 2px;
+	
+}
+.fc-view-agendaWeek .fc-event-vert {
+	font-size: 0;
+	overflow: hidden;
+	width: 2px !important;
+}
+.fc-agenda-axis {
+	width: 20px !important;
+	font-size: .9em;
+}
+
+.fc-button-content {
+	padding: 0;
+}
+.fc-event{
+	background-color: #00A94F;
+	border-color: #00A94F;
+	height: 18px !important;
+}
+.fc-button-inner{
+	border: 0px;
+}
+.fc-event-skin{
+	border-color: #845A41 !important;
+	background-color: #845A41 !important;
+}

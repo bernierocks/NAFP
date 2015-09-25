@@ -1,0 +1,36 @@
+	<script type="text/javascript">
+	
+		function correct_overlay(){
+			var SH = $('#ID-of-slideshow img').height(); //SH = Slide Height
+			var WW = $(window).width();  //WW = Window Width
+			var $overlay = $('#ID-of-other-div');
+
+			//make adjustments to the height based on window width
+			if(WW>990){
+				//SH +=	5;	//+= adds the number of pixels you specify to the height of the additional box
+				//SH -=	5;	//-= takes the number of pixels off both the top and bottom of the additional box
+			} else { //if(WW<990 && WW>400) {
+				
+			}
+
+			//tell the script when to fire
+			if(WW>783){
+				//the script fires at these sizes
+				$overlay.height(SH);
+			} else {
+				//this makes it stop working
+				$overlay.height('auto');
+				$('#ID-of-slideshow').height('auto');
+			}
+		}
+
+		//These fire the script when the page is loaded (window).load, 
+		//and when someone changes the size of their browser by dragging
+		//a corner (window).resize()
+		$(window).load(function(){
+			correct_overlay();
+		});
+		$(window).resize(function(){
+			correct_overlay();
+		});
+	</script>

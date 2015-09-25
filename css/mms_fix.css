@@ -1,0 +1,108 @@
+/*----------------------------
+	MMS Stuff
+-----------------------------*/
+/* front page */
+legend, fieldset{
+	border-radius: 5px;
+}
+legend{
+	width: 60%;
+	font-size: 16px;
+}
+/*fieldset{
+	padding:15px !important;
+	border: 1px solid #885379 !important;
+	margin: 15px 0px !important;
+	
+}*/
+fieldset .admin_fieldset_content a.adm{
+	border-left: 2px solid #EEEEEE !important;
+	padding-left: 15px;
+	transition: .2s;
+}
+fieldset .admin_fieldset_content a.adm:hover{
+	padding-left: 2px;
+	border-left: 15px solid #45C5E0 !important;
+}
+fieldset .admin_fieldset_toggle{
+	background-image: url('../images/up-arrow.png') !important;
+	height: 20px !important;
+	width: 20px !important;
+	right: 11px !important;
+	bottom: -4px !important;
+}
+/* subpage tables */
+#mmsnav>div>a{
+	color: #FF80B3 !important;
+}
+#mheader_5_wrapper .panel-default, #mheader_5_wrapper .panel{
+	background-color: transparent !important;
+	border: 1px solid #885379 !important;
+}
+#mheader_5_wrapper .panel-heading{
+	background-color: #1C2E39 !important;
+	border-color: #885379 !important;
+}
+#mheader_5_wrapper .panel-heading a{
+	color: #ffffff !important;
+	font-size: 18px;
+}
+#mheader_5_wrapper .panel-body{}
+/* mini menu */
+#minimenu_button_span>a{
+	display: inline-block;
+	content: "Mini Menu" !important;
+	background-color: #00D5EE;
+	color: #000000 !important;
+	border-radius: 5px;
+	padding: 3px 5px;
+	text-decoration: none;
+}
+#minimenu_button_span img {
+	opacity: 1;
+}
+#minimenu_button_span>a:after{
+	content: " Mini Menu";
+	font-size: 12px;
+	font-weight: bold; 
+}
+#minimenu_menu{
+	left: 9px !important;
+	top: 47px !important;
+}
+#minimenu_menu table{
+	background-color: #00D5EE !important;
+	border-radius: 5px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	padding: 0px !important;
+}
+#minimenu_menu table td{
+	width: 100% !important;
+	padding: 0px;
+}
+#minimenu_menu table, #minimenu_menu table tr, #minimenu_menu table tr td {
+	display: block !important;
+}
+#minimenu_menu table a{
+	display: block; 
+	padding: 8px 5px;
+	width: 100% !important;
+	background-color: #00A0B3;
+	color: #ffffff;
+	margin: 4px 0px;
+	text-decoration: none;
+	transition: .2s;
+}
+#minimenu_menu table a:hover{
+	background-color: #007380;
+}
+#minimenu_menu table br{
+	display: none;
+}
+.dataTable{
+	color: #000000;
+}
+.dataTable a{
+	color: #FF0066;
+}

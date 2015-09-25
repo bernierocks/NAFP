@@ -1,0 +1,85 @@
+/*----------------------------
+	Mobile Menu
+	
+	--- INSTRUCTIONS ---
+	For the most part, these mobile menu styles will be exactly like your regular navigation styles.
+	There are a few things to watch out for however. I've marked specific items with two hash tags and caps,
+	like ##ITEM. 
+	
+	##TOP - There are three places where this exists, and each one should be the same as the other three.
+			This item tells the mobile menu to start lower than the toggle button.
+			
+	##DIRECTION - This item tells your mobile menu which direction to slide in from, and has a few
+		different parts. Changing "left" to "top" in each ##DIRECTION would have the menu slide in from the top. Bottom is a bad choice here.
+		##DIRECTION-01 - slides in from the side you specify. This one is set negative as it is the starting position of the menu.
+		##DIRECTION-02 - sets the duration of the slide, and again which direction it slides from.
+		##DIRECTION-03 - sets the "open" position. This will be the zeroed out version of ##DIRECTION-01
+	
+	--------------------
+------------------------------*/
+/* the container */
+#mobile-nav-container{
+	display: none;
+	position: fixed;
+	z-index: 100;
+}
+
+/* the row */
+#mobile-nav{}
+
+/* the toggle - col-md-12*/
+#mobile-toggle{
+	position: fixed;
+	top:0;
+	width: 100%;
+}
+#mobile-toggle button{
+	width: 100%;
+	background: #D38430;
+	border: 0px;
+	display: block;
+	height: 45px; /* ##TOP */
+}
+/* the actual menu - col-md-12*/
+/* positioning */
+#mobile-menu{
+	position: fixed;
+	top: 45px; /* ##TOP */
+	width: 300px;
+	left: -300px; /* ##DIRECTION-01 */
+	background-color: #77B044;
+	transition: left .3s; /* ##DIRECTION-02 */
+	padding: 0px;
+}
+#mobile-menu.open{
+	left: 0px; /* ##DIRECTION-03 */
+}
+/* styling */
+#mobile-menu ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#mobile-menu ul li a{
+	background-color: rgba(255,255,255,.8);
+	display: block;
+	padding: 5px 10px;
+	margin: 2px 0px;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+#mobile-toggle svg{
+	vertical-align: middle;
+}
+@media(max-width: 767px){ /* Change this to the actual break point you want the mobile menu to start displaying. Default is 767 */
+	/* This just makes these things work */
+	#mobile-nav-container{
+		display: block;
+	}
+	body .container:nth-of-type(2){
+		margin-top: 45px; /* ##TOP */
+		position: relative;
+		z-index: 50;
+	}
+}

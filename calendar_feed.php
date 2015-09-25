@@ -1,0 +1,1 @@
+<? readfile('http://viethconsulting.com/members/cal_json/'.$org_id.'_fullcalendar.php'); ?>

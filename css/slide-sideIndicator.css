@@ -1,0 +1,57 @@
+
+#sideIndicator .carousel-indicators {
+	margin: 0px;
+	overflow: visible;
+	position: absolute;
+	text-align: center;
+	white-space: nowrap;
+	right: 0px;
+	width: 220px;
+	display: inline-block;
+	left: auto;
+	z-index: 100;
+	background-color: #FAC832;
+	border-top: 1px solid #00AFE6;
+	border-left: 3px solid #ffffff;
+	color: #00AFE6;
+	top: 0px;
+	bottom: 0px;
+	
+	
+}
+#sideIndicator .carousel-inner{
+	z-index: 50;
+}
+#sideIndicator .carousel-indicators li {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	display: block;
+	height: auto;
+	margin: 0 !important;
+	width: auto;
+	text-indent: 0px;
+	border: 0px;
+	border-top: 1px solid #00AFE6;
+	font-size: 32px;
+	cursor: pointer;
+	transition: background-color .2s;
+}
+
+#sideIndicator .carousel-indicators li img{
+	display: none;
+	position: relative;
+	left:-15px;
+	top: 7px;
+	float: left;
+}
+#sideIndicator .carousel-indicators li.active img{
+	display: block !important;
+}
+#sideIndicator .carousel-indicators li.active {
+	background-color: #00AFE6;
+	color: #FAC832;
+	transition: background-color .2s;
+}
+#sideIndicator .carousel-outer {
+	position: relative;
+}

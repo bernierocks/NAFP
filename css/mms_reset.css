@@ -1,0 +1,539 @@
+/*------------------------------------------------------------------------
+										MMS
+-------------------------------------------------------------------------*/
+#mheader_5_wrapper{}
+	#content_table{}
+		/*vvv Resets Internal Styles on MMS Home page vvv*/
+		fieldset {
+			padding:0px;
+			margin:0px;
+			border: none;
+			font-size:inherit;
+			font-family:inherit;
+			position:relative;
+		}
+		legend {
+			font-size:inherit;
+			padding: 5px 0px;
+			margin:0px;
+		}
+		a.adm {
+			line-height:inherit;
+			/*border-left:15px solid #EEE; 
+			padding-left:6px;
+			margin-bottom:2px;
+			^^^Creates squares next to links*/
+			border:none;
+			margin:0px;
+			padding:6px;
+		}
+		a.adm:hover {
+			/* border-left:15px solid #AAA; 
+			^^^Creates squares next to links*/
+			border:none;
+		}
+		a.adm_x /* Disabled links */{
+			line-height:inherit;
+			/*border-left:15px solid #EEE; 
+			padding-left:6px;
+			margin-bottom:2px;
+			^^^Creates squares next to links*/
+			border:none;
+			margin:0px;
+			padding:6px;
+		}
+		div.adm_stats /* div behind membership graph in Dashboard Stats */ {}
+			@media (min-width: 1200px) {
+			div.adm {
+				
+				}
+			div.adm_stats {
+				
+				}
+			}
+		
+		img.adm /*icons in Member Database, Reporting, Communication, etc*/{
+			float:left;
+			display:inline;
+			margin-right: 24px;
+		}
+		/*^^^ End Internal Styles reset for MMS Home page ^^^*/
+		tbody /*Welcome section through Member Area Features (entire page)*/{ }
+			tr /*Welcome section*/{ }
+				td /*Welcome section*/{ }
+					center/*Depricated HTML element, has no function on page*/{ }
+						h3/*"Welcome to the Members Area"*/{ }
+					table /*Welcome section*/{ }
+						tbody /*Welcome section*/{ }
+							tr /*Welcome section*/{ }
+								td /*Welcome section*/{ }
+									table /*"Return to Website", "Help Desk", "Contact (org)"*/{ }
+										tbody/*"Return to Website", "Help Desk", "Contact (org)"*/{ }
+											tr/*"Return to Website", "Help Desk", "Contact (org)"*/{ }
+												td /*"Return to Website", "Contact (org)"*/{ }
+													font/*Verdana for "Return to Website"*/{ }
+														a/*"Return to Website"*/{ }
+													font/*Verdana for "Contact (org)"*/{ }
+														a/*"Contact (org)"*/{ }
+												td  /*"Help Desk"*/{ }
+													font/*Verdana for "Help Desk"*/{ }
+														a/*"Help Desk"*/{ }
+									font/*Verdana for "Return to Website"*/{ }
+										a/*Verdana for "Return to Website"*/{ }
+			tr/*Administrative Functions section*/{ }							
+	(Using AHAM)														
+<tr><td colspan="2"><center><h3 class="sp-title">Administrative Functions</h3></center><style type="text/css">
+	.adm, .adm_stats{
+		position:relative;
+	}
+	div.adm{
+		min-height:55px;
+	}
+	.admin_fieldset_toggle {
+		position:absolute;
+		right:0px;
+		bottom:0px;
+		float:right;
+		z-index:1;
+		width:16px;
+		height:16px;
+		margin:0px;
+		background-image:url('up_arrow.gif');
+		text-align:center;
+		cursor:pointer;
+	}
+</style>
+
+
+<fieldset id="fs_dashboard" class="admin_fieldset" >
+	<legend>Dashboard Stats</legend>
+	<div class="admin_fieldset_content" style="display:block">
+		<div class="adm_stats" style="">
+			<!--[if lt IE 9]><script type="text/javascript" src="https://www.memberleap.com/_jquery/js/excanvas.js"></script><![endif]-->
+						<script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/jquery.jqplot.min.js"></script>
+						 <link rel="stylesheet" href="https://www.memberleap.com/_jquery/jqPlot/jquery.jqplot.min.css" type="text/css" />
+						<style>
+.jqplot-image-button {
+margin-bottom: 15px;
+margin-top: 15px;
+}
+
+div.jqplot-image-container {
+display: none;
+background-color: #fff;
+border: 1px solid #999;
+display: inline-block;
+margin-top: 25px;
+}
+
+div.jqplot-image-container-header {
+font-size: 1.0em;
+font-weight: bold;
+padding: 5px 15px;
+background-color: #eee;
+}
+
+div.jqplot-image-container-content {
+padding: 15px;
+}
+
+a.jqplot-image-container-close {
+float: right;
+}
+						</style>
+						<script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/plugins/jqplot.dateAxisRenderer.min.js"></script>
+							 <script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/plugins/jqplot.pieRenderer.min.js"></script>
+							<script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/plugins/jqplot.dateAxisRenderer.min.js"></script>
+							 <script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/plugins/jqplot.canvasTextRenderer.min.js"></script>
+							 <script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+							 <script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+							 <script type="text/javascript" src="https://www.memberleap.com/_jquery/jqPlot/plugins/jqplot.barRenderer.min.js"></script>
+							
+<style type="text/css">
+	.ui-tabs-vertical { width: 55em; }
+	.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+	.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; }
+	.ui-tabs-vertical .ui-tabs-nav li a { display:block; width:83%; }
+	.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; border-right-width: 1px; }
+	.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+	
+</style>
+
+<div id="admin_stats_tabs" style="border:0px;">
+	<ul>
+		<li><a href="#admin_stats_tabs-249">Members</a></li><li><a href="#admin_stats_tabs-250">Prospects</a></li><li><a href="#admin_stats_tabs-251">Events</a></li><li><a href="#admin_stats_tabs-252">Billing</a></li>	</ul>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var line249 = [['01/14',0],['02/14',0],['03/14',0],['04/14',0],['05/14',0],['06/14',0],['07/14',0],['08/14',0],['09/14',0],['10/14',0],['11/14',0],['12/14',0],['01/15',0]];
+		var plot249 = $.jqplot('chart249', [line249], {
+			animate: true,
+			animateReplot: true,
+			title: 'Membership',
+
+			series:[{renderer:$.jqplot.BarRenderer}],
+			axesDefaults: {
+				tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
+				tickOptions: {
+					fontFamily: 'Verdana',
+					fontSize: '8pt',
+					angle: -30				}
+			},
+			axes: {
+				xaxis: {
+					renderer: $.jqplot.CategoryAxisRenderer
+				}
+			}
+		});
+				var line250 = [['01/14',0],['02/14',0],['03/14',0],['04/14',0],['05/14',0],['06/14',0],['07/14',0],['08/14',0],['09/14',0],['10/14',0],['11/14',0],['12/14',0],['01/15',0]];
+		var plot250 = $.jqplot('chart250', [line250], {
+			animate: true,
+			animateReplot: true,
+			title: 'Record Count',
+
+			series:[{renderer:$.jqplot.BarRenderer}],
+			axesDefaults: {
+				tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
+				tickOptions: {
+					fontFamily: 'Verdana',
+					fontSize: '8pt',
+					angle: -30				}
+			},
+			axes: {
+				xaxis: {
+					renderer: $.jqplot.CategoryAxisRenderer
+				}
+			}
+		});
+				var line251 = [['1209',16],['1210',2],['1211',1],['1212',0],['1213',0],['1214',0],['1215',0],['1216',3],['1217',1],['1218',0],['1219',0],['1220',0],['1221',0],['1222',0],['1223',0],['1224',0],['1225',0],['1226',0],['1227',0],['1228',0],['1229',0],['1230',0],['1231',0],['0101',0],['0102',0],['0103',0],['0104',0],['0105',0],['0106',0],['0107',0],['0108',0]];
+		var plot251 = $.jqplot('chart251', [line251], {
+			animate: true,
+			animateReplot: true,
+			title: 'Event Registrations',
+
+			series:[{renderer:$.jqplot.BarRenderer}],
+			axesDefaults: {
+				tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
+				tickOptions: {
+					fontFamily: 'Verdana',
+					fontSize: '7pt',
+					angle: -70				}
+			},
+			axes: {
+				xaxis: {
+					renderer: $.jqplot.CategoryAxisRenderer
+				}
+			}
+		});
+				var line252 = [['1209',0],['1210',0],['1211',0],['1212',0],['1213',0],['1214',0],['1215',0],['1216',0],['1217',0],['1218',0],['1219',0],['1220',0],['1221',0],['1222',0],['1223',0],['1224',0],['1225',0],['1226',0],['1227',0],['1228',0],['1229',0],['1230',0],['1231',0],['0101',0],['0102',0],['0103',0],['0104',0],['0105',0],['0106',0],['0107',0],['0108',0]];
+		var plot252 = $.jqplot('chart252', [line252], {
+			animate: true,
+			animateReplot: true,
+			title: 'Sales (Invoicing:Members)',
+
+			series:[{renderer:$.jqplot.BarRenderer}],
+			axesDefaults: {
+				tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
+				tickOptions: {
+					fontFamily: 'Verdana',
+					fontSize: '7pt',
+					angle: -70				}
+			},
+			axes: {
+				xaxis: {
+					renderer: $.jqplot.CategoryAxisRenderer
+				}
+			}
+		});
+		
+		$( "#admin_stats_tabs" ).tabs({
+			activate: function(){
+									plot249.replot({resetAxes:true});
+									plot250.replot({resetAxes:true});
+									plot251.replot({resetAxes:true});
+									plot252.replot({resetAxes:true});
+							}
+		}).addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		$( "#admin_stats_tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+	});
+	</script>
+		<div id="admin_stats_tabs-249" style="width:75%;padding:0px;" >
+	<div id="chart249" style="float:left;width:345px;height:160px;border:1px solid #DDD;">
+	</div>
+		<div style="float:right;width:175px;">
+		<i>Members</i><div style="font-size:11px;height:95px;margin-top:12px;">Total Count: 0<br>
+				</div><br><small><a href="admin_stats.php" style="color:#999;">more stats...</a></small><br><small><a href="admin_stats_reset.php" style="color:#999;">01/07/15 09:13:30</a></small>		</div>
+		<div class="clear" style="clear:both;"></div>
+	</div>
+		<div id="admin_stats_tabs-250" style="width:75%;padding:0px;" >
+	<div id="chart250" style="float:left;width:345px;height:160px;border:1px solid #DDD;">
+	</div>
+		<div style="float:right;width:175px;">
+		<i>Prospects</i><div style="font-size:11px;height:95px;margin-top:12px;">Total Count: 0<br>
+				</div><br><small><a href="admin_stats.php" style="color:#999;">more stats...</a></small><br><small><a href="admin_stats_reset.php" style="color:#999;">01/07/15 09:13:30</a></small>		</div>
+		<div class="clear" style="clear:both;"></div>
+	</div>
+		<div id="admin_stats_tabs-251" style="width:75%;padding:0px;" >
+	<div id="chart251" style="float:left;width:345px;height:160px;border:1px solid #DDD;">
+	</div>
+		<div style="float:right;width:175px;">
+		<i>Events</i><div style="font-size:11px;height:95px;margin-top:12px;">Registrations for events, last 30 days</div><br><small><a href="admin_stats.php" style="color:#999;">more stats...</a></small><br><small><a href="admin_stats_reset.php" style="color:#999;">01/07/15 09:13:30</a></small>		</div>
+		<div class="clear" style="clear:both;"></div>
+	</div>
+		<div id="admin_stats_tabs-252" style="width:75%;padding:0px;" >
+	<div id="chart252" style="float:left;width:345px;height:160px;border:1px solid #DDD;">
+	</div>
+		<div style="float:right;width:175px;">
+		<i>Billing</i><div style="font-size:11px;height:95px;margin-top:12px;">Member Billing, invoicing last 30 days</div><br><small><a href="admin_stats.php" style="color:#999;">more stats...</a></small><br><small><a href="admin_stats_reset.php" style="color:#999;">01/07/15 09:13:30</a></small>		</div>
+		<div class="clear" style="clear:both;"></div>
+	</div>
+	
+
+
+</div>
+
+		</div>
+	</div>
+	<div class="admin_fieldset_toggle">&nbsp;</div>
+</fieldset>
+<fieldset id="fs_member_database" class="admin_fieldset" >
+	<legend>Member Database</legend>
+	<div class="admin_fieldset_content" style="display:block">
+		<img class="adm" src="ma_mem.jpg" align="left" />
+		<a class="adm" href="secure/mlist/mlist.php?z_m_type=M&z_clr=X">Member Database</a><a class="adm" href="secure/renewals/renewals.php">Membership Billing</a><a class="adm" href="secure/contacts/menu.php">CRM System</a><a class="adm" href="secure/upload/aham_upload.php">Member Upload/Update</a><a class="adm" href="secure/upload_csv/mlist.php">Upload CSV Files</a><a class="adm" href="secure/initial_invoices/mlist.php">Initial Invoices (super)</a><a class="adm" href="secure/config/tcs_templates/index.php?mid=964238331">TCS Templates (super)</a>	</div>
+	<div class="admin_fieldset_toggle">&nbsp;</div>
+</fieldset>
+
+<fieldset id="fs_reporting" class="admin_fieldset" style="background-color:#f2f2f2;">
+	<legend>Reporting</legend>
+	<div class="admin_fieldset_content" style="display:none">
+		<img class="adm" src="ma_mem_rpt.jpg" align="left" />
+		<a class="adm" href="secure/reports.php">Reporting/Lists/Labels</a><a class="adm" href="secure/reporting/qbemenu.php">Custom Reports</a><a class="adm" href="quick_reports.php">Quick Reports</a>	</div>
+	<div class="admin_fieldset_toggle">&nbsp;</div>
+</fieldset>
+
+	<fieldset id="fs_communication" class="admin_fieldset" style="background-color:#f2f2f2;">
+		<legend>Communication</legend>
+		<div class="admin_fieldset_content" style="display:none">
+			<img class="adm" src="ma_comm.jpg" align="left" />
+			<a class="adm" href="secure/messages/mlist.php">Broadcast Messages</a><a class="adm" href="secure/newsletters/mlist.php">Newsletter Editor</a><a class="adm" href="multipost_v2/">Multipost</a><a class="adm" href="secure/drip_marketing/mlist.php">Drip Marketing</a>		</div>
+		<div class="admin_fieldset_toggle">&nbsp;</div>
+	</fieldset>
+	<fieldset id="fs_event_management" class="admin_fieldset" style="background-color:#f2f2f2;">
+		<legend>Event Management</legend>
+		<div class="admin_fieldset_content" style="display:none">
+			<img class="adm" src="ma_event.jpg" align="left" />
+			<a class="adm" href="secure/calendar/mlist.php">Calendar Admin</a><a class="adm" href="secure/invites/mlist.php">Calendar Invitations</a><a class="adm" href="secure/evr/mlist.php">Event Registration</a>		</div>
+		<div class="admin_fieldset_toggle">&nbsp;</div>
+	</fieldset>
+<fieldset id="fs_members_area_functions" class="admin_fieldset">
+	<legend>Members Area Functions</legend>
+	<div class="admin_fieldset_content" style="display:block">
+		<img class="adm" src="ma_m_only.jpg" align="left" />
+		<a class="adm" href="secure/filearchive/mcats.php">File Archive</a><a class="adm" href="secure/surveys/mlist.php">Surveys</a><a class="adm" href="secure/projects/mlist.php">Projects/Committees</a><a class="adm" href="secure/new_forum/mlist.php">Message Boards</a><a class="adm" href="secure/proposals/mlist.php">Proposal Submission</a><a class="adm" href="secure/reservations/mlist.php">Resource Reservations</a>	</div>
+	<div class="admin_fieldset_toggle">&nbsp;</div>
+</fieldset>
+
+	<fieldset id="fs_website_management" class="admin_fieldset" >
+		<legend>Website Management</legend>
+		<div class="admin_fieldset_content" style="display:block">
+			<img class="adm" src="ma_web.jpg" align="left" />
+			<a class="adm" href="secure/content_v2/menu.php">Content Manager Menu</a><a class="adm" href="secure/scrolling_news/sn_list.php">News Manager</a><a class="adm" href="secure/press_releases/pr_list.php">Member Press Releases</a><a class="adm" href="secure/forms/mlist.php">Forms Builder</a><a class="adm_x" href="not_available.php">Blogs</a><a class="adm" href="secure/wish/mlist.php">Donations / Wish List</a>
+		</div>
+		<div class="admin_fieldset_toggle">&nbsp;</div>
+	</fieldset>
+
+	<fieldset id="fs_configuration" class="admin_fieldset" >
+		<legend>Configuration</legend>
+		<div class="admin_fieldset_content" style="display:block">
+			<img class="adm" src="ma_conf.jpg" align="left" />
+			<a class="adm" href="secure/config/configmenu.php">MMS Configuration</a><a class="adm" href="secure/config/service_plan.php">Change Service Plan</a><a class="adm" href="secure/mobile/mlist.php">Mobile App Manager</a>		</div>
+		<div class="admin_fieldset_toggle">&nbsp;</div>
+	</fieldset>
+
+<script type="text/javascript">
+	function doSaveAdminState(){
+		var closed = new Array();
+		$('.admin_fieldset').each(function(){
+			if(!$(this).find('.admin_fieldset_content').is(":visible")){
+				closed.push($(this).attr('id'));
+			}
+		});
+		$.post('members_alt_admin_ajax.php', {'closed':closed.join()}, function(data){
+			//Do nothing for now.
+		}, 'json');
+	}
+
+	$(function(){
+		$('.admin_fieldset_toggle').click(function(){
+			$(this).hide();
+			$(this).siblings('.admin_fieldset_content').slideUp('fast',function(){
+				$(this).closest('.admin_fieldset').css('background-color','#f2f2f2');
+				doSaveAdminState();
+			});
+		});
+
+		$('.admin_fieldset').click(function(){
+			if(!$(this).find('.admin_fieldset_content').is(":visible")){
+				var that = this;
+				$(this).css('background-color','transparent');
+				$(this).find('.admin_fieldset_content').slideDown('fast', function(){ doSaveAdminState(); $(that).find('.admin_fieldset_toggle').show(); });
+			}
+		});
+	});
+</script>
+</td></tr><tr><td colspan="2"  valign="top"> <center><h3 class="sp-title">My Membership Information...<b><small>  (John Zomer)</small></b></h3></center><small><br /></small>
+<table width="100%" cellpadding=0 cellspacing=0>
+<tr>
+
+<td width="50%" valign="top" align="left"><div style="font-family:Verdana; font-size:12px;">&nbsp;&nbsp; Zomer, John<br />&nbsp;&nbsp; <br />&nbsp;&nbsp; ,    <br />&nbsp;&nbsp; Home Phone: <br />&nbsp;&nbsp; Work Phone: <br />&nbsp;&nbsp; john@viethconsulting.com<br /><br /></div></td>
+<td width="50%" valign="top"  align="left">
+
+	 <font size="2" face="Verdana">
+
+
+
+<h2 class="hide">Member Information</h2><b>Member Information</b><br />&nbsp;&nbsp; <a href="mchange.php">Change Contact/Profile Info</a><br /><br>&nbsp;&nbsp; <a href="mpasschg.php">Change Username/Password</a><br /><h2 class="hide">Billing Information</h2><br><b>Billing Information</b><br />&nbsp;&nbsp; <a href="memberbilling.php"><font face="Verdana" size="2">Membership Status/Billing Info</font></a><br /><h2 class="hide">Other Info</h2><br><b>Other Info</b><br />&nbsp;&nbsp; <a href="invites_mine.php"><font face="Verdana" size="2">My Invitations</font></a><br />	</font>
+
+<br />
+</td>
+</tr></table>
+
+</td>
+	</tr>
+
+<tr><td colspan="2">
+
+<style>
+div.maf {
+	min-height:50px;
+	width:240px;
+	float:left;
+	display:inline;
+	padding:0px;
+	margin:0px 0px 10px 0px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	text-align:left;
+	line-height:1.2em;
+	/* border:1px solid #f0f; */
+}
+
+</style>
+<center><h3 class="sp-title">Members Area Features...</h3></center><div class="debug" style="display:none;">I</div><fieldset class="members_fieldset"><legend>Information Resources</legend><div class="maf" >Member Name Search<br /><form style="display:inline" method="post" action="member_search.php"><input type="text" name="srh_string" size="20"><input type="submit" name="Submit" value="Search"></form></div><div class="maf"><img src="icons/cache/8c8c8c-newsletter.png" align="left" hspace="10" /><a target="_blank" href="newsletters.php?org_id=AHAM">Newsletters</a><br /><small>view current and past issues</small></div><div class="maf"><img src="icons/cache/8c8c8c-fileCabinet.png" align="left" hspace="10" /><a href="filearchive_view.php">File Archive</a><br /><small>view documents for our members</small></div><div class="maf"><img src="icons/cache/8c8c8c-quickreports.png" align="left" hspace="10" /><a href="quick_reports.php">Quick Reports</a><br /><small>view membership reports, rosters, and more</small></div><div class="maf"><img src="icons/cache/8c8c8c-photos.png" align="left" hspace="10" /><a href="../photo_album/gallery_index.php?org_id=AHAM">Photo Album</a><br />
+<small>view our photo album</small></div><div class="maf">
+	<img src="icons/cache/8c8c8c-classifieds.png" align="left" hspace="10" /><a href="classifieds_view.php">Job Board</a><br />
+			  <small>See all available jobs<br /></small><small>&nbsp;<a href="secure/classifieds/addclassified.php?src=MA">submit an ad</a><br /></small> </div></fieldset><fieldset class="members_fieldset"><legend>Events</legend><div class="maf">
+<img src="icons/cache/8c8c8c-eventRegistration.png" align="left" hspace="10" /><a href="evreg_view.php">Event Registration</a><br /><small>register and pay fees for upcoming events (0 avail.)</small></div><div class="maf">
+		<img src="icons/cache/8c8c8c-calendar.png" align="left" hspace="10" /><a href="calendar_view.php">Calendar of Events</a><br />
+				  <small>view upcoming events</small></div></fieldset><fieldset class="members_fieldset"><legend>Communication</legend><div class="maf"><img src="icons/cache/8c8c8c-multipost.png" align="left" hspace="10" /><a href="multipost_v2/">Multipost</a><br/><small>send a general multipost to Twitter and/or Facebook</small></div></fieldset><fieldset class="members_fieldset"><legend>Interaction</legend><div class="maf">
+		 <img src="icons/cache/8c8c8c-projects.png" align="left" hspace="10" /><a href="projects_view.php">Projects/Committees</a><br />
+				  <small>sign-up to participate in a project/committee (0)</small>
+				  </div><div class="maf"><img src="icons/cache/8c8c8c-messageBoard.png" align="left" hspace="10" /><a href="forum/board_list.php">Message Boards</a><br /><small>join ongoing discussions</small></div><div class="maf"><img src="icons/cache/8c8c8c-survey.png" align="left" hspace="10" /><a href="surveys.php">Surveys</a><br /><small>participate in online surveys</small></div></fieldset></td></tr></table>
+<br />
+</div>
+/* front page */
+legend, fieldset{
+	border-radius: 5px;
+}
+legend{
+	width: 60%;
+	font-size: 16px;
+}
+fieldset{
+	padding:15px !important;
+	border: 1px solid #885379 !important;
+	margin: 15px 0px !important;
+	
+}
+fieldset .admin_fieldset_content a.adm{
+	border-left: 2px solid #EEEEEE !important;
+	padding-left: 15px;
+	transition: .2s;
+}
+fieldset .admin_fieldset_content a.adm:hover{
+	padding-left: 2px;
+	border-left: 15px solid #45C5E0 !important;
+}
+fieldset .admin_fieldset_toggle{
+	background-image: url('../images/up-arrow.png') !important;
+	height: 20px !important;
+	width: 20px !important;
+	right: 11px !important;
+	bottom: -4px !important;
+}
+/* subpage tables */
+#mmsnav>div>a{
+	color: #FF80B3 !important;
+}
+#mheader_5_wrapper .panel-default, #mheader_5_wrapper .panel{
+	background-color: transparent !important;
+	border: 1px solid #885379 !important;
+}
+#mheader_5_wrapper .panel-heading{
+	background-color: #1C2E39 !important;
+	border-color: #885379 !important;
+}
+#mheader_5_wrapper .panel-heading a{
+	color: #ffffff !important;
+	font-size: 18px;
+}
+#mheader_5_wrapper .panel-body{}
+/* mini menu */
+#minimenu_button_span>a{
+	display: inline-block;
+	content: "Mini Menu" !important;
+	background-color: #00D5EE;
+	color: #000000 !important;
+	border-radius: 5px;
+	padding: 3px 5px;
+	text-decoration: none;
+}
+#minimenu_button_span img {
+	opacity: 1;
+}
+#minimenu_button_span>a:after{
+	content: " Mini Menu";
+	font-size: 12px;
+	font-weight: bold; 
+}
+#minimenu_menu{
+	left: 9px !important;
+	top: 47px !important;
+}
+#minimenu_menu table{
+	background-color: #00D5EE !important;
+	border-radius: 5px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	padding: 0px !important;
+}
+#minimenu_menu table td{
+	width: 100% !important;
+	padding: 0px;
+}
+#minimenu_menu table, #minimenu_menu table tr, #minimenu_menu table tr td {
+	display: block !important;
+}
+#minimenu_menu table a{
+	display: block; 
+	padding: 8px 5px;
+	width: 100% !important;
+	background-color: #00A0B3;
+	color: #ffffff;
+	margin: 4px 0px;
+	text-decoration: none;
+	transition: .2s;
+}
+#minimenu_menu table a:hover{
+	background-color: #007380;
+}
+#minimenu_menu table br{
+	display: none;
+}
+.dataTable{
+	color: #000000;
+}
+.dataTable a{
+	color: #FF0066;
+}

@@ -1,0 +1,55 @@
+/*------MMS Input Resets--------*/
+
+#mheader_5_wrapper input, #mheader_5_wrapper input::-webkit-file-upload-button, #mheader_5_wrapper button {
+	padding: 1px 6px;
+	align-items: flex-start;
+	text-align: center;
+	cursor: default;
+	color: buttontext;
+	padding: 2px 6px 3px;
+	border: 2px outset buttonface;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	background-color: buttonface;
+	box-sizing: border-box;
+	-webkit-appearance: push-button;
+	-webkit-user-select: none;
+	white-space: pre;
+	-webkit-rtl-ordering: logical;
+	font: 12px Verdana;
+}
+#mheader_5_wrapper input, #mheader_5_wrapper input:not(button) {
+	border: 2px inset;
+	background-color: white;	
+}
+#mheader_5_wrapper input[type='submit'] {
+	border: 2px outset buttonface;
+	background-color: buttonface;	
+}
+#mheader_5_wrapper input, #mheader_5_wrapper textarea, #mheader_5_wrapper keygen, #mheader_5_wrapper select, #mheader_5_wrapper button {
+	margin: 0em;
+	font: -webkit-small-control;
+	color: initial;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+	-webkit-writing-mode: horizontal-tb;
+}
+#mheader_5_wrapper input[type="radio" i], #mheader_5_wrapper input[type="checkbox" i] {
+margin: 3px 0.5ex;
+padding: initial;
+background-color: initial;
+border: initial;
+}
+#mheader_5_wrapper input[type="checkbox" i] {
+	margin: 3px 3px 3px 4px;
+	-webkit-appearance: checkbox;
+	box-sizing: border-box;
+}
