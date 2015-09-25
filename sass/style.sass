@@ -1,0 +1,265 @@
+// Bernie Mixins
+=breakpoint($point)
+    @if $point == md
+        @media (min-width: 1200px)
+            @content
+    @if $point == sm
+        @media (max-width: 1195px)
+            @content
+    @if $point == xs
+        @media (max-width: 480px)
+            @content    
+ 
+
+=bcbreakpoint($min:0, $max:0)
+    $type: type-of($min)
+    @if $type == number
+        $query: "all" !default
+        @if $min != 0 and $max != 0
+            $query: "(min-width: #{$min}) and (max-width: #{$max})"
+        @else if $min != 0 and $max == 0 
+            $query: "(min-width: #{$min})"
+        @else if $min == 0 and $max != 0
+            $query: "(max-width: #{$max})"
+        @media #{$query}
+            @content
+
+            
+=shadow-this
+    box-shadow : 0px 0px 25px rgba(0, 0, 0, 0.25)
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=0, Color='#000000') 
+    
+=transition
+    -webkit-transition: all 0.3s ease
+    -moz-transition: all 0.3s ease
+    -o-transition: all 0.3s ease   
+    -ms-transition: all 0.3s ease
+    transition: all 0.3s ease
+    transition: all 0.2s ease, padding 0.8s linear
+
+
+/* 
+    ===========================================================================================
+
+    						Global Styles
+
+    ===========================================================================================
+
+
+*
+    text-rendering: optimizeLegibility
+
+
+body 
+    background-color: #fff
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif
+    font-size: 16px
+    
+p
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif
+    font-size: 16px
+    span
+        font-size: 16px !important
+
+h1
+    font-weight: bold
+    font-size: 30px
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif
+        
+h2
+    padding: 0
+    font-size: 24px
+    font-weight: bold
+    color: #9d0098
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif
+
+a:hover, a:focus
+    color: #9d0098
+
+    
+\::-webkit-input-placeholder
+    color: #888888 !important
+
+\:-moz-placeholder 
+    color: #888888 !important
+
+\::-moz-placeholder
+    color: #888888 !important
+
+\:-ms-input-placeholder
+    color: #888888 !important
+
+
+a
+    color: blue
+    text-decoration: underline
+
+
+/* 
+    ===========================================================================================
+
+    						Adjustments
+
+    ===========================================================================================
+    
+
+.container
+    background-color: #fff
+    
+html, body
+    +bcbreakpoint($min: 0, $max: 991px)
+        overflow-x: hidden
+
+
+        
+/* 
+    ===========================================================================================
+
+    						Menu
+
+    ===========================================================================================
+#NP
+    background-image: -moz-linear-gradient( 90deg, rgb(45,80,118) 0%, rgb(112,146,183) 100%)
+    background-image: -webkit-linear-gradient( 90deg, rgb(45,80,118) 0%, rgb(112,146,183) 100%)
+    background-image: -ms-linear-gradient( 90deg, rgb(45,80,118) 0%, rgb(112,146,183) 100%)
+.nav
+    li
+        a
+            padding-top: 4px
+            padding-bottom: 5px
+            padding-left: 10px !important
+            padding-right: 10px !important
+            
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus, .nav>li>a:hover, .nav>li>a:focus            
+    background-color: #9d0098
+            
+.navbar-nav>li>.dropdown-menu
+    background: #6a6a6a
+    padding: 0
+    li
+        border-bottom: 1px solid #030
+        &:nth-last-child
+            border-bottom: 1px solid transparent
+    a
+        font-size: 11px
+        color: #ffffff
+        text-align: left
+        padding-top: 8px
+        padding-bottom: 5px
+        
+#main-menu 
+    .caret
+        display: none
+        
+        
+#mobile-toggle            
+    svg
+        width: 32px       
+        height: 32px
+
+        
+.modal-body
+    position: relative
+    padding: 20px 20px 40px
+        
+#mobileMenuWrapper
+    height: 100vh
+    position: fixed
+    top: -1px
+    bottom: 0px
+    z-index: 100
+    overflow-y: auto
+    overflow-x: hidden
+    left: -120%
+    width: 225px
+    max-width: 100%
+    background-color: #5f0c0c
+    transition: all 300ms cubic-bezier(1, 0.01, 0, 1) 0s
+    background-image: -moz-linear-gradient(90deg,#2d5076 0,#7092b7 100%)
+    background-image: -webkit-linear-gradient(90deg,#2d5076 0,#7092b7 100%)
+    background-image: -ms-linear-gradient(90deg,#2d5076 0,#7092b7 100%)
+#mobileMenuWrapper.open
+    left: 0px
+    bottom: 0px
+#mobileMenuWrapper 
+    #mobile-menu
+        overflow: auto
+        padding: 0px 8px 10px
+        > li#triggerClose 
+            color: #fff
+            float: right
+            display: inline
+            font-size: 22px
+            cursor: pointer
+            transform: rotate(45deg)
+        a
+            width: 100%
+            color: #ffffff
+            display: inline-block
+            margin: 10px 0 0 0
+            font-size: 14px
+            padding: 8px 10px
+            &:hover
+                background-color: #003cab
+                text-decoration: none
+    ul
+        margin: 0px
+        padding: 0px
+        list-style-type: none
+#mobileMenuWrapper 
+    background-color: rgba(0,0,0,0.96)
+    a
+        text-decoration: none
+    ul.mDropdown
+        margin: 0 15px
+        display: none
+#mobile-toggle
+    border: none
+    background: transparent
+    box-shadow: none
+    cursor: pointer
+#mobile-menu-col
+    top: 13px
+    right: 20px
+    float: right
+    position: relative
+    margin-right: -14px
+    background-image: -moz-linear-gradient(90deg, #2d5076 0%, #7092b7 100%)
+    background-image: -webkit-linear-gradient(90deg, #2d5076 0%, #7092b7 100%)
+    background-image: -ms-linear-gradient(90deg, #2d5076 0%, #7092b7 100%)
+    +bcbreakpoint($min: 0, $max: 991px)
+        margin-top: -47px
+        width: 100%
+        padding: 0
+        margin: -13px -20px 0px 0px
+#mobile-logo
+    width: 40%
+    float: left
+    margin-top: 27px
+    margin-bottom: 20px
+    a
+        margin: 0 !important
+    svg#logo
+        width: 250px
+        max-width: 250px
+        
+        
+    
+#mobile-toggle  
+    padding: 7px 7px 3px 
+    display: inline-block !important
+    float: right
+    +bcbreakpoint($min: 991px, $max: 0)    
+        display: none !important
+        
+    
+#mobileMenuWrapper 
+    #mobile-menu 
+        a:hover
+            background-color: #9d0098
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus
+    color: #fff
+    text-decoration: none
+    background-color: #9d0098
+
